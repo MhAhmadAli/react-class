@@ -9,11 +9,12 @@ export default function MyFunction() {
   }
 
   useEffect(() => {
-    console.log("function")
+    console.log("useEffect")
   }, [name]);
 
   return (
     <div>
+      <div>My Function</div><br/>
       <input type="text" onChange={(e) => {
         setName(e.target.value)
       }} />

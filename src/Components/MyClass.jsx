@@ -12,15 +12,15 @@ export default class MyClass extends Component {
   }
 
   componentDidMount(){
-
+    // triggered after the component is mounted
   }
 
   componentDidUpdate() {
-
+    // triggered after the component is updated
   }
 
   componentWillUnmount() {
-    
+    // triggered before the component is removed
   }
 
   updateCounter() {
@@ -32,6 +32,7 @@ export default class MyClass extends Component {
   render() {
     return (
       <div>
+        <div>My Class</div><br/>
         <div>{this.state.count}</div>
         <button onClick={this.updateCounter}>Count</button>
       </div>
