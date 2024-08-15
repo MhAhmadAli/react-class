@@ -1,0 +1,15 @@
+.MyClass {
+  background-color: red;
+  font-size: 30px;
+}
+
+.count {
+  color: blue;
+  background: yellow;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border: 10px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './MyClass.css'
 
 export default class MyClass extends Component {
   constructor(props) {
@@ -31,10 +32,11 @@ export default class MyClass extends Component {
 
   render() {
     return (
-      <div>
+      <div className='MyClass'>
         <div>My Class</div><br/>
+        <input type="text" className='nameInput' />
         <div>{this.state.count}</div>
-        <button onClick={this.updateCounter}>Count</button>
+        <button onClick={this.updateCounter} className='count'>Count</button>
       </div>
     )
   }

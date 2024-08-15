@@ -20,7 +20,7 @@ function MyForm() {
 
         console.log(name, email)
       }}>
-        <label htmlFor="name">Name: </label>
+        <label for="name">Name: </label>
         <input id='name'
           type="password"
           onChange={(e) => {
