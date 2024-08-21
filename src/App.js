@@ -9,17 +9,17 @@ import MyList from './Components/MyList';
 function App() {
   return (
     <div className="App1">
-      <MyClass />
+      {/* <MyClass /> */}
       <hr />
       <MyFunction />
       <hr />
-      <MyEvents />
-      <hr />
+      {/* <MyEvents /> */}
+      {/* <hr />
       <MyForm />
       <hr />
       <MyConditional userType={'admin'} isLoggedIn={false}/>
       <hr />
-      <MyList/>
+      <MyList/> */}
     </div>
   );
 }

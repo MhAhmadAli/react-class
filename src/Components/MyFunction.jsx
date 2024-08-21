@@ -8,9 +8,14 @@ export default function MyFunction() {
     setCount(count + 1);
   }
 
-  useEffect(() => {
-    console.log("useEffect")
-  }, [name]);
+  let serverData = async () => {
+    const data = await fetch('http://127.0.0.1:4000/');
+    console.log(await data.text())
+  };
+
+  useEffect(()=>{
+    serverData();
+  }, []);
 
   return (
     <div>

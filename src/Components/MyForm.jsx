@@ -20,7 +20,7 @@ function MyForm() {
 
         console.log(name, email)
       }}>
-        <label for="name">Name: </label>
+        <label htmlFor="name">Name: </label>
         <input id='name'
           type="password"
           onChange={(e) => {
@@ -32,10 +32,10 @@ function MyForm() {
           onChange={(e) => {
             setEmail(e.target.value)
           }} /><br />
-        <label for="cars">Choose a car:</label>
+        <label htmlFor="cars">Choose a car:</label>
         <select id="cars" name="cars">
-          {carsList.map((car) => {
-            return <option value={car.name}>{car.name.toUpperCase()}</option>
+          {carsList.map((car, index) => {
+            return <option key={index} value={car.name}>{car.name.toUpperCase()}</option>
           })}
         </select><br />
         <textarea cols='20' rows='10'></textarea><br />

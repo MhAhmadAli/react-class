@@ -13,64 +13,74 @@ function MyList() {
 
   let [objList, setObjList] = useState([{
     "id": 1,
-    "first_name": "Vanny",
-    "last_name": "Flude",
-    "email": "vflude0@printfriendly.com",
-    "gender": "Female"
+    "first_name": "Sapphira",
+    "last_name": "Kirsz",
+    "email": "skirsz0@ameblo.jp",
+    "gender": "Female",
+    "is_married": true
   }, {
     "id": 2,
-    "first_name": "Theodore",
-    "last_name": "Daingerfield",
-    "email": "tdaingerfield1@miibeian.gov.cn",
-    "gender": "Male"
+    "first_name": "Antony",
+    "last_name": "Avon",
+    "email": "aavon1@engadget.com",
+    "gender": "Genderqueer",
+    "is_married": true
   }, {
     "id": 3,
-    "first_name": "Sophronia",
-    "last_name": "Pauley",
-    "email": "spauley2@163.com",
-    "gender": "Female"
+    "first_name": "Barbe",
+    "last_name": "Turton",
+    "email": "bturton2@illinois.edu",
+    "gender": "Female",
+    "is_married": false
   }, {
     "id": 4,
-    "first_name": "Lita",
-    "last_name": "Stallan",
-    "email": "lstallan3@blog.com",
-    "gender": "Female"
+    "first_name": "Pasquale",
+    "last_name": "Rogerson",
+    "email": "progerson3@zimbio.com",
+    "gender": "Male",
+    "is_married": true
   }, {
     "id": 5,
-    "first_name": "Kelley",
-    "last_name": "Sinnett",
-    "email": "ksinnett4@com.com",
-    "gender": "Male"
+    "first_name": "Claretta",
+    "last_name": "Tiffin",
+    "email": "ctiffin4@sohu.com",
+    "gender": "Female",
+    "is_married": false
   }, {
     "id": 6,
-    "first_name": "Devi",
-    "last_name": "Bouldon",
-    "email": "dbouldon5@uol.com.br",
-    "gender": "Polygender"
+    "first_name": "Wilone",
+    "last_name": "Hooban",
+    "email": "whooban5@howstuffworks.com",
+    "gender": "Female",
+    "is_married": false
   }, {
     "id": 7,
-    "first_name": "Northrop",
-    "last_name": "Gitting",
-    "email": "ngitting6@lulu.com",
-    "gender": "Male"
+    "first_name": "Felike",
+    "last_name": "Bambery",
+    "email": "fbambery6@imdb.com",
+    "gender": "Male",
+    "is_married": true
   }, {
     "id": 8,
-    "first_name": "Heinrick",
-    "last_name": "Rodden",
-    "email": "hrodden7@51.la",
-    "gender": "Male"
+    "first_name": "Carolee",
+    "last_name": "Wadley",
+    "email": "cwadley7@nsw.gov.au",
+    "gender": "Female",
+    "is_married": true
   }, {
     "id": 9,
-    "first_name": "Drusi",
-    "last_name": "Goldsby",
-    "email": "dgoldsby8@hugedomains.com",
-    "gender": "Female"
+    "first_name": "Dorothee",
+    "last_name": "Hinrichs",
+    "email": "dhinrichs8@sciencedaily.com",
+    "gender": "Female",
+    "is_married": false
   }, {
     "id": 10,
-    "first_name": "Binni",
-    "last_name": "Howsley",
-    "email": "bhowsley9@oracle.com",
-    "gender": "Polygender"
+    "first_name": "Margi",
+    "last_name": "Pethybridge",
+    "email": "mpethybridge9@addthis.com",
+    "gender": "Female",
+    "is_married": false
   }]);
 
   useEffect(() => {
@@ -110,7 +120,28 @@ function MyList() {
             return (
               <tr key={index}>
                 {keys.map((innerItem, index) => {
-                  return <td key={index}>{outerItem[innerItem]}</td>
+                  return <td key={index}>{typeof (outerItem[innerItem]) == 'boolean' ? outerItem[innerItem] ? "true" : "false" : outerItem[innerItem]}</td>
+                })}
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+      <hr/>
+      <table>
+        <thead>
+          <tr>
+            {keys.map((item, index) => {
+              return <th key={index}>{item}</th>
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {objList.map((outerItem, index) => {
+            return (
+              <tr key={index}>
+                {keys.map((innerItem, index) => {
+                  return <td key={index}>{innerItem == 'is_married' ? outerItem[innerItem] ? "Married" : "Single" : outerItem[innerItem]}</td>
                 })}
               </tr>
             )
