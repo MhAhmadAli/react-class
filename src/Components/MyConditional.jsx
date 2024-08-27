@@ -24,10 +24,10 @@ function MyConditional(props) {
 
   return (
     <div>
-      {props.userType === 'admin' ? 'User is admin' : "User is normal"}
+      {/* {props.userType === 'admin' ? 'User is admin' : "User is normal"} */}
 
       <div>
-        {(show || props.isLoggedIn) && <div>show</div>}
+        {show && <div>show</div>}
       </div>
 
       <button onClick={() => {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function MyFunction() {
   const [name, setName] = useState();
@@ -8,13 +9,18 @@ export default function MyFunction() {
     setCount(count + 1);
   }
 
-  let serverData = async () => {
-    const data = await fetch('http://127.0.0.1:4000/');
-    console.log(await data.text())
-  };
+  async function fetchFunction() {
+    let data = await fetch('http://localhost:4000/').then((data)=>{
+      return data.text();
+    });
+    console.log(data);
+
+    data = await axios.get('http://localhost:4000/');
+    console.log(data.data);
+  }
 
   useEffect(()=>{
-    serverData();
+    fetchFunction();
   }, []);
 
   return (

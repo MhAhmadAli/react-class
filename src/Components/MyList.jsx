@@ -13,8 +13,8 @@ function MyList() {
 
   let [objList, setObjList] = useState([{
     "id": 1,
-    "first_name": "Sapphira",
-    "last_name": "Kirsz",
+    "first_name": "Ahmad",
+    "last_name": "Ali",
     "email": "skirsz0@ameblo.jp",
     "gender": "Female",
     "is_married": true
