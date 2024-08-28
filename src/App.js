@@ -9,6 +9,7 @@ import StateShare from './Components/StateShare';
 import StateShare1 from './Components/StateShare1';
 
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import Login from './Components/Login';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,9 @@ const router = createBrowserRouter([
   },{
     path: "/stateshare1",
     element: <StateShare1 />,
+  },{
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
