@@ -27,10 +27,6 @@ button:hover {
   opacity: 0.8;
 }
 
-button:disabled {
-  background-color: gray;
-}
-
 /* Extra styles for the cancel button */
 .cancelbtn {
   width: auto;
@@ -67,4 +63,14 @@ span.psw {
   margin-top: 50px;
   background-color: lightgray;
   box-shadow: 5px 5px limegreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-name {
+  font-weight: 900;
+  font-size: xx-large;
+  font-family: 'Fira Code';
+  margin-top: 10px;
 }

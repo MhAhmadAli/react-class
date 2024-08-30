@@ -1,3 +1,4 @@
+import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import './App.css';
 import MyClass from './Components/MyClass';
 import MyFunction from './Components/MyFunction';
@@ -7,9 +8,9 @@ import MyConditional from './Components/MyConditional';
 import MyList from './Components/MyList';
 import StateShare from './Components/StateShare';
 import StateShare1 from './Components/StateShare1';
-
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import Login from './Components/Login';
+import Signup from './Components/Signup';
+
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,10 @@ const router = createBrowserRouter([
   },{
     path: "/login",
     element: <Login />,
-  },
+  },{
+    path: "/signup",
+    element: <Signup/>
+  }
 ]);
 
 function App() {

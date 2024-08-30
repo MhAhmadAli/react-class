@@ -1,27 +1,45 @@
 import React, { useState } from 'react';
 import './Login.css';
 import Avatar from '../Assets/avatar.png'
+import axios from 'axios';
+import request from '../Utils';
 
 function Login() {
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     const data = {
       email,
       pass
     }
-
-    fetch('http://localhost:4000/login', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify(data)
+    request('/login',{
+      method: 'POST',
+      data
+    }).then((data) => {
+      console.log(data);
     });
+    // axios.post(`${process.env.REACT_APP_SERVER_URL}/login`, data).then((res) => {
+    //   console.log(res.data);
+    //   setIsLoading(false);
+    // }).catch((err) => {
+    //   console.log("Error:", err.response.data);
+    //   setIsLoading(false);
+    // });
+
+
+    // fetch('http://localhost:4000/login', {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Accept": "application/json",
+    //   },
+    //   body: JSON.stringify(data)
+    // });
   }
 
   return (
@@ -32,7 +50,7 @@ function Login() {
         </div>
 
         <div className="container">
-          <label htmlFor="email"><b>Username</b></label>
+          <label htmlFor="email"><b>Email</b></label>
           <input type="text" placeholder="Enter Email" name="email" required onChange={(e) => {
             setEmail(e.target.value);
           }} />
@@ -42,7 +60,7 @@ function Login() {
             setPass(e.target.value);
           }} />
 
-          <button type="submit">Login</button>
+          <button type="submit" disabled={isLoading}>{isLoading ? "Loading..." : "Login"}</button>
         </div>
       </form>
     </div>
