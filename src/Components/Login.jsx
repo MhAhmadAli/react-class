@@ -13,16 +13,22 @@ function Login() {
     e.preventDefault();
     setIsLoading(true);
 
-    const data = {
+    const data1 = {
       email,
       pass
     }
+
     request('/login',{
       method: 'POST',
-      data
+      data: data1
     }).then((data) => {
       console.log(data);
+      setIsLoading(false);
+    }).catch((err) => {
+      console.log(err);
+      setIsLoading(false);
     });
+
     // axios.post(`${process.env.REACT_APP_SERVER_URL}/login`, data).then((res) => {
     //   console.log(res.data);
     //   setIsLoading(false);
@@ -30,7 +36,6 @@ function Login() {
     //   console.log("Error:", err.response.data);
     //   setIsLoading(false);
     // });
-
 
     // fetch('http://localhost:4000/login', {
     //   method: "POST",
