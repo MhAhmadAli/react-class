@@ -10,12 +10,17 @@ import StateShare from './Components/StateShare';
 import StateShare1 from './Components/StateShare1';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
+import DynamicRoute from "./Components/DynamicRoute";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <div>Hello, World!</div>,
+  },
+  {
+    path: "/:value/:id?/:email?",
+    element: <DynamicRoute />
   },
   {
     path: "/myclass",

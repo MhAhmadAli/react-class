@@ -20,7 +20,16 @@ function Signup() {
       pass
     };
 
-    axios.post('http://localhost:4000/signup', data);
+    // axios.post('http://localhost:5000/signup', data);
+
+    fetch("http://localhost:5000/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
   }
 
   return (
